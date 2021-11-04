@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.2.3" />
+  </ItemGroup>
+
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="dotnet tool restore" />
+      <!--ARM requires OpenAPI version 2.0 instead of the default 3.0--> 
+      <Exec Command="dotnet swagger tofile --output $(MSBuildProjectDirectory)\swagger.json --serializeasv2 $(OutDir)ArmSwashbuckleStarterKit.dll v1" />
+  </Target>
+
+</Project>
