@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.ArmSwashbuckleStarterKit.Middlewares;
 
 namespace ArmSwashbuckleStarterKit
 {
@@ -69,7 +70,6 @@ namespace ArmSwashbuckleStarterKit
                 c.OperationFilter<PageableOperationFilter>();
                 c.OperationFilter<RequireRequestBodyOperationFilter>();
                 c.OperationFilter<ResponseDescriptionsOperationFilter>();
-                c.OperationFilter<XmsErrorOperationFilter>();
                 c.OperationFilter<XmsExamplesOperationFilter>();
                 c.OperationFilter<XmsLongRunningOperationFilter>();
 
@@ -146,6 +146,10 @@ namespace ArmSwashbuckleStarterKit
             }
 
             app.UseHttpsRedirection();
+
+            // Place ExceptionHandler before Authentication and Authorization
+            // to handle exceptions for auth as well
+            app.UseMiddleware<ExceptionHandlerMiddleware>();
 
             app.UseRouting();
 

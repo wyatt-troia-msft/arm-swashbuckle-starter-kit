@@ -36,7 +36,7 @@ namespace Microsoft.ArmSwashbuckleStarterKit.Swagger
                                          .Select(m =>
                                              (m.GetCustomAttribute<JsonPropertyAttribute>()
                                               ?.PropertyName
-                                              ?? m.Name.ToCamelCase()));
+                                              ?? m.Name.Uncapitalize()));
 
             foreach (var excludedName in excludedList)
             {

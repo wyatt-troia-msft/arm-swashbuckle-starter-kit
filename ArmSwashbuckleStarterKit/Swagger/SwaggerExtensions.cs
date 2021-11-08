@@ -18,32 +18,17 @@ namespace Microsoft.ArmSwashbuckleStarterKit.Swagger
 
     public static class SwaggerExtensions
     {
-        public static string ToCamelCase(this string the_string)
+        public static string Uncapitalize(this string the_string)
         {
-            if (the_string == null || the_string.Length < 2)
+            if (the_string == null)
             {
                 return the_string;
             }
-
-            string[] words = the_string.Split(
-                new char[] { },
-                StringSplitOptions.RemoveEmptyEntries);
-
-            string result = words[0].ToLower();
-            for (int i = 1; i < words.Length; i++)
+            else if (the_string.Length == 1)
             {
-                result +=
-                    words[i].Substring(0, 1).ToUpper() +
-                    words[i].Substring(1);
+                return the_string.ToLower();
             }
-
-            return result;
-        }
-
-        public static string GetJsonPropertyName(this PropertyInfo property)
-        {
-            var propertyName = property.GetCustomAttribute<JsonPropertyAttribute>()?.PropertyName;
-            return propertyName ?? ToCamelCase(property.Name);
+            return (Char.ToLower(the_string[0]) + the_string.Substring(1));
         }
 
         public static string SerializeAsV2String(this OpenApiSchema schema)

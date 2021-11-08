@@ -130,19 +130,14 @@
           "format": "int32",
           "type": "integer"
         },
-        "temperatureF": {
-          "format": "int32",
-          "type": "integer",
-          "readOnly": true
+        "systemData": {
+          "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/systemData"
         },
         "summary": {
           "type": "string"
         },
         "publicId": {
           "type": "string"
-        },
-        "systemData": {
-          "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/systemData"
         }
       },
       "x-ms-azure-resource": true
