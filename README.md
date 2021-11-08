@@ -22,7 +22,7 @@ Swashbuckle generates a Swagger file from C# code by inspecting .NET controllers
 ## Resources
 
 - [Get started with Swashbuckle and ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-5.0&tabs=visual-studio)
-
+- [ARM OpenAPI Specifications Authoring - Automated Guidelines](https://github.com/Azure/azure-rest-api-specs/blob/main/documentation/openapi-authoring-automated-guidelines.md)
 ## Disclaimer
 
 This toolkit is not polished or thoroughly tested. It is one RP's attempt to create a generic toolkit out of the solutions it developed to ARM-compliantly autogenerate its Swagger spec. If you find a bug or want to build on it, we welcome PRs.
