@@ -4,9 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ArmSwashbuckleStarterKit.Controllers
 {
@@ -36,7 +34,7 @@ namespace ArmSwashbuckleStarterKit.Controllers
         [HttpGet("{forecastId}")]
         [ProducesResponseType(typeof(WeatherForecast), StatusCodes.Status200OK)]
         [SwaggerLinkToExample]
-        public WeatherForecast Get()
+        public WeatherForecast Get(Guid subscriptionId, string resourceGroupName, Guid forecastId)
         {
             // the random values used below are just for the sake of example. In reality, this GET would be deterministic
             var rng = new Random();
@@ -58,7 +56,7 @@ namespace ArmSwashbuckleStarterKit.Controllers
         [HttpGet("{forecastId}/fiveDay")]
         [ProducesResponseType(typeof(WeatherForecast), StatusCodes.Status200OK)]
         [SwaggerLinkToExample]
-        public ResourceListResultModel<WeatherForecast> List()
+        public ResourceListResultModel<WeatherForecast> List(Guid subscriptionId, string resourceGroupName, Guid forecastId)
         {
             // the random values used below are just for the sake of example. In reality, this GET would be deterministic
             var rng = new Random();
