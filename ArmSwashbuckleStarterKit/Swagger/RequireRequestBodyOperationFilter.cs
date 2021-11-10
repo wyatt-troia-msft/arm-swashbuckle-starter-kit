@@ -11,11 +11,11 @@ namespace Microsoft.ArmSwashbuckleStarterKit.Swagger
     using Microsoft.OpenApi.Models;
     using Swashbuckle.AspNetCore.SwaggerGen;
 
+    /// <summary>
+    /// Mark the request body as required on operations for controller methods decorated with the <see cref="SwaggerRequireRequestBodyAttribute"/>.
+    /// </summary>
     public class RequireRequestBodyOperationFilter : IOperationFilter
     {
-        /// <summary>
-        /// Marks request bodies on operations for controller methods decorated with the SwaggerRequireRequestBodyAttribute as required.
-        /// </summary>
         public void Apply(OpenApiOperation operation, OperationFilterContext context)
         {
             var attribute = context.MethodInfo.GetCustomAttributes(typeof(SwaggerRequireRequestBodyAttribute), false).FirstOrDefault();

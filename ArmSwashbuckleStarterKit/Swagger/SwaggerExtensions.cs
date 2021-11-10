@@ -16,6 +16,9 @@ namespace Microsoft.ArmSwashbuckleStarterKit.Swagger
     using Microsoft.OpenApi.Writers;
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Extension methods used by Swashbuckle filters. Almost certainly includes unused code. This was originally copied from another repo.
+    /// </summary>
     public static class SwaggerExtensions
     {
         public static string Uncapitalize(this string the_string)

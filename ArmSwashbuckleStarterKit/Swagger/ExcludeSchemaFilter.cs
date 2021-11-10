@@ -13,6 +13,9 @@ namespace Microsoft.ArmSwashbuckleStarterKit.Swagger
     using Newtonsoft.Json;
     using Swashbuckle.AspNetCore.SwaggerGen;
 
+    /// <summary>
+    /// Excludes schemas marked with <see cref="SwaggerExcludeAttribute"/> from the generated Swagger.
+    /// </summary>
     public class ExcludeSchemaFilter : ISchemaFilter
     {
         public void Apply(OpenApiSchema schema, SchemaFilterContext schemaFilterContext)

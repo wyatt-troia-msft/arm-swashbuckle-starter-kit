@@ -13,12 +13,10 @@ namespace Microsoft.ArmSwashbuckleStarterKit.Swagger
     using Microsoft.ArmSwashbuckleStarterKit.Attributes;
 
     /// <summary>
-    /// Operation Filter to satisfy ARM API Rule 2062
+    /// Adds x-ms-azure-resource extension to schemas marked with <see cref="SwaggerIsTrackedARMResourceAttribute"/>. Also adds reference to 
+    /// common ARM types for TrackedResource and SystemData.
+    /// <see href="https://github.com/Azure/azure-rest-api-specs/blob/main/documentation/openapi-authoring-automated-guidelines.md#r2062-xmsresourceinputresponse">Docs</see>
     /// </summary>
-    /// <remarks>
-    /// this will correct the following AutoRest error:<br />
-    /// ERROR(XmsResourceInPutResponse/R2062/ARMViolation) : The 200 response model for an ARM PUT operation must have x-ms-azure-resource extension set to true in its hierarchy.
-    /// </remarks>
     public class TrackedAzureResourceSchemaFilter : ISchemaFilter
     {
         public void Apply(OpenApiSchema schema, SchemaFilterContext context)

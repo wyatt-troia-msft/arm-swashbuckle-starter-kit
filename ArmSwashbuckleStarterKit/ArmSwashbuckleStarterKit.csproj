@@ -4,17 +4,22 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <!--Include the needed Swashbuckle packages-->
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.2.3" />
+      
+    <!--Only needed if using Newtonsoft.Json as a serializer-->
     <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.2.3" />
   </ItemGroup>
 
-    <PropertyGroup>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <NoWarn>$(NoWarn);1591</NoWarn>
-    </PropertyGroup>
+  <!--Enable XML comments for Swashbuckle https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-6.0&tabs=visual-studio#xml-comments-->
+  <PropertyGroup>
+      <GenerateDocumentationFile>true</GenerateDocumentationFile>
+      <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
 
+  <!--After each build, generate Swagger JSON file and copy to docs directory for API documentation-->
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
       <Exec Command="dotnet tool restore" />
       <!--ARM requires OpenAPI version 2.0 instead of the default 3.0--> 

@@ -12,7 +12,7 @@ namespace Microsoft.ArmSwashbuckleStarterKit.Swagger
     using Swashbuckle.AspNetCore.SwaggerGen;
 
     /// <summary>
-    /// Reference shared definitions where available
+    /// Reference shared definitions where available.
     /// </summary>
     public class ExternalizeDocumentFilter : IDocumentFilter
     {

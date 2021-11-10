@@ -11,6 +11,9 @@ namespace Microsoft.ArmSwashbuckleStarterKit.Swagger
     using Microsoft.OpenApi.Models;
     using Swashbuckle.AspNetCore.SwaggerGen;
 
+    /// <summary>
+    /// Adds a description for each operation response based on the response's status code.
+    /// </summary>
     public class ResponseDescriptionsOperationFilter : IOperationFilter
     {
         private static Dictionary<string, string> statusCodeToDescription = new Dictionary<string, string>

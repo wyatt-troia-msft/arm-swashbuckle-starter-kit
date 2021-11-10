@@ -11,7 +11,8 @@ namespace Microsoft.ArmSwashbuckleStarterKit.Swagger
     using Swashbuckle.AspNetCore.SwaggerGen;
 
     /// <summary>
-    /// Remove formats not allowed by ARM
+    /// Remove formats not allowed by ARM.
+    /// <see href="https://github.com/Azure/azure-rest-api-specs/blob/main/documentation/openapi-authoring-automated-guidelines.md#r3017-guidusage">Docs</see>
     /// </summary>
     public class RemoveInvalidFormatSchemaFilter : ISchemaFilter
     {

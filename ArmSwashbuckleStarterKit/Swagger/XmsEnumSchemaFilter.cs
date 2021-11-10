@@ -11,6 +11,10 @@ namespace Microsoft.ArmSwashbuckleStarterKit.Swagger
     using Microsoft.OpenApi.Models;
     using Swashbuckle.AspNetCore.SwaggerGen;
 
+    /// <summary>
+    /// Adds x-ms-enum extension to enum schemas.
+    /// <see href="https://github.com/Azure/autorest/blob/main/docs/extensions/readme.md#x-ms-enum">Docs</see>
+    /// </summary>
     public class XmsEnumSchemaFilter : ISchemaFilter
     {
         public void Apply(OpenApiSchema schema, SchemaFilterContext context)

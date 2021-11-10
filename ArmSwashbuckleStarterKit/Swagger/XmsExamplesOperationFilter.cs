@@ -6,14 +6,16 @@
 
 namespace Microsoft.ArmSwashbuckleStarterKit.Swagger
 {
+    using Microsoft.ArmSwashbuckleStarterKit.Attributes;
     using Microsoft.OpenApi.Any;
     using Microsoft.OpenApi.Models;
     using Swashbuckle.AspNetCore.SwaggerGen;
 
     /// <summary>
-    /// Generate paths to example files
+    /// Adds x-ms-examples extension to operations. See <see cref="SwaggerExtensions.GetSwaggerExampleReferences"/> and <see cref="SwaggerLinkToExampleAttribute"/>.
+    /// <see href="https://github.com/Azure/azure-rest-api-specs/blob/main/documentation/x-ms-examples.md">Docs</see>
     /// </summary>
-    /// <remarks>The example files themselves are hard-coded/>.</remarks>
+    /// <remarks>The example files themselves are hard-coded.</remarks>
     public class XmsExamplesOperationFilter : IOperationFilter
     {
         public void Apply(OpenApiOperation operation, OperationFilterContext context)

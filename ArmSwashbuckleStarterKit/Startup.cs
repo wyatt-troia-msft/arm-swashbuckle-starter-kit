@@ -64,7 +64,7 @@ namespace ArmSwashbuckleStarterKit
                 c.SchemaFilter<RemoveInvalidFormatSchemaFilter>();
                 c.SchemaFilter<TrackedAzureResourceSchemaFilter>();
                 c.SchemaFilter<XmsEnumSchemaFilter>();
-                c.SchemaFilter<XmsExtensionsSchemaFilter>();
+                c.SchemaFilter<XmsClientFlattenSchemaFilter>();
 
                 c.OperationFilter<DefaultResponseOperationFilter>();
                 c.OperationFilter<PageableOperationFilter>();

@@ -7,7 +7,7 @@
 namespace Microsoft.ArmSwashbuckleStarterKit.Swagger
 {
     /// <summary>
-    /// Constants used solely in either swagger generation, swagger attribute verification, or swagger filter testing
+    /// Constants used by Swashbuckle filters.
     /// </summary>
     public static class SwaggerConstants
     {

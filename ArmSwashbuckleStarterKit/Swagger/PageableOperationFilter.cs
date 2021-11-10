@@ -11,12 +11,12 @@ namespace Microsoft.ArmSwashbuckleStarterKit.Swagger
     using Microsoft.OpenApi.Models;
     using Swashbuckle.AspNetCore.SwaggerGen;
 
+    /// <summary>
+    /// add x-ms-pageable extension per Azure guidelines.
+    /// <see href="https://armwiki.azurewebsites.net/api_contracts/guidelines/openapi.html#oapi009-always-add-x-ms-pageable-to-list-calls">Docs</see>
+    /// </summary>
     public class PageableOperationFilter : IOperationFilter
     {
-        /// <summary>
-        /// add x-ms-pageable extension per Azure guidelines
-        /// see https://armwiki.azurewebsites.net/api_contracts/guidelines/openapi.html#oapi009-always-add-x-ms-pageable-to-list-calls
-        /// </summary>
         public void Apply(OpenApiOperation operation, OperationFilterContext context)
         {
             if (context.MethodInfo.ReturnType.FullName.Contains(typeof(ResourceListResultModel<>).FullName))
