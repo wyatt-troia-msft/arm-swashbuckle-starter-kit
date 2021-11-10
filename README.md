@@ -31,3 +31,7 @@ Swashbuckle generates a Swagger file from C# code by inspecting .NET controllers
 ## Disclaimer
 
 This toolkit is not polished or thoroughly tested. It is one RP's attempt to create a generic toolkit out of the solutions it developed to ARM-compliantly autogenerate its Swagger spec. If you find a bug or want to build on it, we welcome PRs.
+
+## Acknowledgements
+
+Thank you to Teddy Todorov for getting us started with Swashbuckle.
